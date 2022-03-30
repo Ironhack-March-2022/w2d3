@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Clock</title>
+	<style>
+		body {
+			height: 100vh;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.clock {
+			font-family: sans-serif;
+			font-size: 250px;
+		}
+	</style>
+</head>
+<body>
+	<div class="clock"></div>	
+	<script>
+		function displayTime() {
+			const now = new Date()
+			const time = now.toLocaleTimeString()
+			// render it into the dom
+			document.querySelector('.clock').innerText = time
+			console.log(time)
+		}
+		displayTime() 
+		const id = setInterval(displayTime, 1000);
+		console.log(id)
+	</script>
+</body>
+</html>
